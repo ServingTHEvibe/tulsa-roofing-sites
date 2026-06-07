@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulldog Roofing | Bixby & South Tulsa's Most Trusted Roofer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --black: #1A1A1A; --dark: #242424; --red: #C0392B; --red-light: #E74C3C; --white: #F8F8F8; --muted: #888; --border: rgba(248,248,248,0.08); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(26,26,26,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+  .nav-brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.04em; color: var(--white); }
+  .nav-brand span { color: var(--red); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--red); color: #fff; padding: 0.65rem 1.5rem; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; border-radius: 4px; }
+  .nav-cta:hover { background: var(--red-light); }
+
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; background: var(--black); }
+  .hero::after { content: ''; position: absolute; right: -200px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(192,57,43,0.08) 0%, transparent 70%); }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .hero-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 1.25rem; display: block; }
+  .hero-h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 800; line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.5rem; text-transform: uppercase; }
+  .hero-h1 .accent { color: var(--red); }
+  .hero-sub { font-size: 1rem; line-height: 1.75; color: var(--muted); margin-bottom: 2.5rem; max-width: 480px; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--red); color: #fff; padding: 1rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all 0.2s; }
+  .hero-cta:hover { background: var(--red-light); transform: translateY(-1px); }
+  .hero-tagline { margin-top: 1rem; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+  .hero-scores { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
+  .score { background: var(--dark); padding: 2rem; }
+  .score-val { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; color: var(--red); line-height: 1; }
+  .score-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.25rem; }
+  .hero-checks { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .check { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--white); font-weight: 500; }
+  .check-icon { width: 20px; height: 20px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.65rem; }
+
+  .proof { padding: 3rem 4rem; background: var(--dark); border-top: 1px solid var(--border); }
+  .proof-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+  .proof-text { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .proof-sep { width: 1px; height: 1.5rem; background: var(--border); }
+  .proof-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .pbadge { border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.9rem; border-radius: 4px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .features { padding: 6rem 4rem; }
+  .features-inner { max-width: 1200px; margin: 0 auto; }
+  .sec-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 0.5rem; }
+  .sec-h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 3rem; line-height: 1.05; }
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
+  .feat-card { background: var(--black); padding: 2rem; border-top: 3px solid transparent; transition: all 0.25s; }
+  .feat-card:hover { background: var(--dark); border-top-color: var(--red); }
+  .feat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.75rem; }
+  .feat-desc { font-size: 0.875rem; line-height: 1.7; color: var(--muted); }
+
+  .testimonials { padding: 5rem 4rem; background: var(--dark); }
+  .testi-inner { max-width: 1200px; margin: 0 auto; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testi-card { background: var(--black); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border); }
+  .testi-stars { color: var(--red); margin-bottom: 0.75rem; font-size: 0.875rem; }
+  .testi-q { font-size: 0.9rem; line-height: 1.7; color: var(--white); margin-bottom: 1.25rem; }
+  .testi-auth { font-size: 0.78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .contact { padding: 6rem 4rem; }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+  .contact-left h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin: 0.5rem 0 1rem; }
+  .contact-left p { font-size: 0.95rem; line-height: 1.7; color: var(--muted); margin-bottom: 2rem; }
+  .contact-detail { display: flex; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.875rem; color: var(--white); }
+  .contact-detail svg { width: 16px; height: 16px; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+  .form-g { margin-bottom: 1rem; }
+  .form-g label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .form-g input, .form-g textarea { width: 100%; background: var(--dark); border: 1px solid var(--border); color: var(--white); padding: 0.85rem 1rem; font-family: 'Barlow', sans-serif; font-size: 0.875rem; border-radius: 4px; outline: none; transition: border-color 0.2s; }
+  .form-g input:focus, .form-g textarea:focus { border-color: var(--red); }
+  .form-g textarea { min-height: 110px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit { width: 100%; background: var(--red); color: #fff; padding: 1rem; border: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: var(--red-light); }
+
+  footer { padding: 2.5rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); }
+  .footer-brand span { color: var(--red); }
+  .footer-meta { font-size: 0.78rem; color: var(--muted); }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-scores { margin: 0; }
+    .proof, .features, .testimonials, .contact { padding: 3rem 1.5rem; }
+    .feat-grid, .testi-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">BULLDOG <span>ROOFING</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Free Estimate</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-tag">Bixby & South Tulsa — Est. 2003</span>
+      <h1 class="hero-h1">Built Tough.<br>Built to <span class="accent">Last.</span></h1>
+      <p class="hero-sub">Since 2003, Bulldog Roofing has been Bixby's most trusted roofer. With a 4.9-star rating and 26 straight five-star reviews, our reputation speaks for itself. We don't cut corners — ever.</p>
+      <a href="#contact" class="hero-cta">
+        Get Your Free Estimate
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <p class="hero-tagline">Bixby · Jenks · South Tulsa · No trip charge for estimates</p>
+      <div class="hero-checks">
+        <div class="check"><div class="check-icon">✓</div>4.9 stars · 26 verified reviews</div>
+        <div class="check"><div class="check-icon">✓</div>Licensed, bonded & fully insured</div>
+        <div class="check"><div class="check-icon">✓</div>21 years in business</div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-scores">
+        <div class="score"><div class="score-val">4.9</div><div class="score-label">Star Rating</div></div>
+        <div class="score"><div class="score-val">26</div><div class="score-label">5★ Reviews</div></div>
+        <div class="score"><div class="score-val">21+</div><div class="score-label">Years in Business</div></div>
+        <div class="score"><div class="score-val">0</div><div class="score-label">Complaints</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="proof-inner">
+    <div class="proof-text">Certified & Preferred By</div>
+    <div class="proof-sep"></div>
+    <div class="proof-badges">
+      <div class="pbadge">GAF Master Elite</div>
+      <div class="pbadge">Owens Corning Preferred</div>
+      <div class="pbadge">CertainTeed SELECT</div>
+      <div class="pbadge">Oklahoma Licensed</div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="services">
+  <div class="features-inner">
+    <span class="sec-tag">What We Do Best</span>
+    <h2 class="sec-h2">Full-Service Roofing.<br>Zero Shortcuts.</h2>
+    <div class="feat-grid">
+      <div class="feat-card reveal"><div class="feat-title">Roof Replacement</div><p class="feat-desc">Complete tear-off and re-roof with premium materials. We've replaced hundreds of roofs in Bixby — and every single one comes with a written workmanship warranty.</p></div>
+      <div class="feat-card reveal"><div class="feat-title">Hail & Storm Damage</div><p class="feat-desc">South Tulsa gets hammered by hail. We respond fast, document everything, and handle the insurance claim process from inspection through payment. Most homeowners pay only their deductible.</p></div>
+      <div class="feat-card reveal"><div class="feat-title">Roof Repair</div><p class="feat-desc">Leaks, missing shingles, failed flashing — we fix it right the first time. Our repairs aren't band-aids; they're long-term solutions backed by our workmanship guarantee.</p></div>
+      <div class="feat-card reveal"><div class="feat-title">Gutters & Downspouts</div><p class="feat-desc">Seamless aluminum gutters installed properly make a huge difference in roof longevity. We size them correctly, slope them right, and make sure every drop goes where it should.</p></div>
+      <div class="feat-card reveal"><div class="feat-title">Attic Ventilation</div><p class="feat-desc">Poor attic ventilation kills shingles early and drives up energy bills. We assess your current setup and install ridge vents, soffit vents, and attic fans to protect your investment.</p></div>
+      <div class="feat-card reveal"><div class="feat-title">Free Inspection</div><p class="feat-desc">Every estimate starts with a free, no-pressure inspection. We get on the roof, take photos, and walk you through exactly what we find. No surprises, no pressure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="testi-inner">
+    <span class="sec-tag">4.9 Stars · 26 Reviews</span>
+    <h2 class="sec-h2">Bixby Trusts Us.<br>Here's Why.</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"Bulldog replaced our roof after the March hailstorm. From the initial call to the final cleanup, everything was handled perfectly. They even stayed an extra hour to make sure every nail was accounted for in our yard. That's the kind of detail that matters."</p>
+        <div class="testi-auth">Amy R. — Bixby, Storm Replacement</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"I've had three other roofers give me quotes over the years. Bulldog is always in the same ballpark price-wise but the quality of work is noticeably better. They take pride in what they do and it shows in the finished product."</p>
+        <div class="testi-auth">Greg T. — South Tulsa, Full Replacement</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"I was skeptical of any roofer after a bad experience years ago. Bulldog completely changed my mind. They showed up on time, communicated every step of the way, and left my property cleaner than they found it. 10/10."</p>
+        <div class="testi-auth">Linda H. — Jenks, Roof Replacement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <span class="sec-tag">Free Estimate</span>
+      <h3>Let's Get Started</h3>
+      <p>Fill out the form and we'll reach out within 24 hours to schedule your free inspection. No pressure, no obligation — just a straight answer from a roofer you can trust.</p>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.83a16 16 0 006.29 6.29l1.16-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (918) 555-0394
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Bixby, Jenks & South Tulsa
+      </div>
+    </div>
+    <form onsubmit="handleSubmit(event)" class="reveal">
+      <div class="form-row">
+        <div class="form-g"><label>First Name</label><input type="text" placeholder="Mike" required></div>
+        <div class="form-g"><label>Last Name</label><input type="text" placeholder="Williams" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-g"><label>Phone</label><input type="tel" placeholder="(918) 555-0000" required></div>
+        <div class="form-g"><label>Email</label><input type="email" placeholder="mike@email.com"></div>
+      </div>
+      <div class="form-g"><label>What do you need?</label><textarea placeholder="Storm damage, full replacement, repair, free inspection..."></textarea></div>
+      <button type="submit" class="form-submit" id="submitBtn">Get Your Free Estimate</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">BULLDOG <span>ROOFING</span></div>
+  <div class="footer-meta">© 2024 Bulldog Roofing · Est. 2003 · Bixby, OK · Licensed & Insured</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i*70); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+  function handleSubmit(e) { e.preventDefault(); const btn = document.getElementById('submitBtn'); btn.textContent = 'Estimate Requested ✓'; btn.style.background = '#27AE60'; }
+</script>
+</body>
+</html>
